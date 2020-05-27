@@ -4,10 +4,12 @@ import Cell from './Cell'
 export default function Grid(props) {
     const width = props.column * 15 + props.column
 
+    console.log(props)
+
     var rows = []
     let cellClass = ""
 
-    for(let row = 0; row < props.row; row++) {
+    for(let row = 0; row < props.rows; row++) {
         for(let column = 0; column < props.column; column++) {
             let cellId = row + "_" + column;
 

@@ -11,7 +11,7 @@ export default function Cell(props){
     }
 
     return(
-        <div className={props.cellClass} id={props.id} onClick={selectCell} style={{backgroundColor: "#" + color}}>
+        <div className={props.cellClass} id={props.id} onClick={props.selectCell} style={{backgroundColor: "#" + color}}>
 
         </div>
     )
