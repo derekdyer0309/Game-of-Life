@@ -31,6 +31,7 @@
 .grid {
   width: 400px;
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
   border: 1px solid black;
   border-bottom: 2px solid black;
@@ -38,26 +39,22 @@
   margin: 20px auto;
 }
 
-.grid {
-  border: 1px solid gray;
+.dead, .alive {
+  border: 1px solid black;
   width: 15px;
   height: 15px;
   margin-left: -1px;
   margin-bottom: -1px;
 }
 
-.cell:hover {
-  background-color: dodgerblue;
-}
-
 .alive {
-  background-color: mediumaquamarine;
+  /* background-color: mediumaquamarine; */
   width: 15px;
   height: 15px;
 }
 
 .dead {
-  background-color: mediumseagreen;
+  /* background-color: mediumseagreen; */
   width: 15px;
   height: 15px;
 }
