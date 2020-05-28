@@ -1,5 +1,8 @@
 import React, {useState, useEffect, useRef} from 'react'
 import Grid from './Grid'
+import { Button } from '@material-ui/core'
+import Rules_Modal from './Rules_Modal'
+import Info_Modal from './Info_Modal'
 
 function arrayClone(arr) {
     return JSON.parse(JSON.stringify(arr))
@@ -15,7 +18,7 @@ function getWindowDimensions() {
 
 export default function Main() {
     const height = Math.floor((getWindowDimensions().height / 30))
-    const width = Math.floor((getWindowDimensions().width / 25))
+    const width = Math.floor((getWindowDimensions().width / 30))
 
     const [rows, setRows] = useState(height)
     const [column, setColumn] = useState(width)
@@ -107,15 +110,17 @@ export default function Main() {
 
     return(
         <div>
-            <h1>Conway's Game of Life</h1>
-            <h2>Generation: {generation}</h2>
-            <div className="buttons">
-                <button onClick={() => startButton()}>Start/Stop</button>
-                <button onClick={() => nextButton()}>Next generation</button>
-                <button onClick={() => reset()}>Reset</button>
-                <button onClick={() => seed()}>Randomize</button>
-            </div>
+            <h2>Conway's Game of Life</h2>
+                <Button color="secondary" size="small" onClick={() => startButton()}>Start/Stop</Button>
+                <Button color="primary" size="small" onClick={() => nextButton()}>Next generation</Button>
+                <Button color="primary" size="small" onClick={() => reset()}>Reset</Button>
+                <Button color="primary" size="small" onClick={() => seed()}>Randomize</Button>
+            <h3>Generation: {generation}</h3>
             <Grid gridFull={gridFull} rows={rows} column={column} selectCell={selectCell} />
+            <div class="modals">
+                <Rules_Modal />
+                <Info_Modal />
+            </div>
         </div>
     )
 }
